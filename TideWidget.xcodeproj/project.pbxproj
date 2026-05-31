@@ -6,14 +6,65 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4A0ED6E92FCC61660081EADA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0ED6CA2FCC5FA40081EADA /* WidgetKit.framework */; };
+		4A0ED6EA2FCC61660081EADA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0ED6CC2FCC5FA40081EADA /* SwiftUI.framework */; };
+		4A0ED6F92FCC61670081EADA /* TideInfoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4A0ED6E82FCC61660081EADA /* TideInfoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A0ED6F72FCC61670081EADA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A0ED6AE2FCC5F6C0081EADA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A0ED6E72FCC61660081EADA;
+			remoteInfo = TideInfoWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4A0ED6E32FCC5FA50081EADA /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4A0ED6F92FCC61670081EADA /* TideInfoWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4A0ED6B62FCC5F6C0081EADA /* TideWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TideWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0ED6CA2FCC5FA40081EADA /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		4A0ED6CC2FCC5FA40081EADA /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4A0ED6E82FCC61660081EADA /* TideInfoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TideInfoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4A0ED6FA2FCC61670081EADA /* Exceptions for "TideInfoWidget" folder in "TideInfoWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 4A0ED6E72FCC61660081EADA /* TideInfoWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4A0ED6B82FCC5F6C0081EADA /* TideWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = TideWidget;
+			sourceTree = "<group>";
+		};
+		4A0ED6EB2FCC61660081EADA /* TideInfoWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4A0ED6FA2FCC61670081EADA /* Exceptions for "TideInfoWidget" folder in "TideInfoWidgetExtension" target */,
+			);
+			path = TideInfoWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +77,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4A0ED6E52FCC61660081EADA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A0ED6EA2FCC61660081EADA /* SwiftUI.framework in Frameworks */,
+				4A0ED6E92FCC61660081EADA /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				4A0ED6B82FCC5F6C0081EADA /* TideWidget */,
+				4A0ED6EB2FCC61660081EADA /* TideInfoWidget */,
+				4A0ED6C92FCC5FA40081EADA /* Frameworks */,
 				4A0ED6B72FCC5F6C0081EADA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +103,18 @@
 			isa = PBXGroup;
 			children = (
 				4A0ED6B62FCC5F6C0081EADA /* TideWidget.app */,
+				4A0ED6E82FCC61660081EADA /* TideInfoWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4A0ED6C92FCC5FA40081EADA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A0ED6CA2FCC5FA40081EADA /* WidgetKit.framework */,
+				4A0ED6CC2FCC5FA40081EADA /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +127,12 @@
 				4A0ED6B22FCC5F6C0081EADA /* Sources */,
 				4A0ED6B32FCC5F6C0081EADA /* Frameworks */,
 				4A0ED6B42FCC5F6C0081EADA /* Resources */,
+				4A0ED6E32FCC5FA50081EADA /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4A0ED6F82FCC61670081EADA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				4A0ED6B82FCC5F6C0081EADA /* TideWidget */,
@@ -69,6 +143,28 @@
 			productName = TideWidget;
 			productReference = 4A0ED6B62FCC5F6C0081EADA /* TideWidget.app */;
 			productType = "com.apple.product-type.application";
+		};
+		4A0ED6E72FCC61660081EADA /* TideInfoWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A0ED6FB2FCC61670081EADA /* Build configuration list for PBXNativeTarget "TideInfoWidgetExtension" */;
+			buildPhases = (
+				4A0ED6E42FCC61660081EADA /* Sources */,
+				4A0ED6E52FCC61660081EADA /* Frameworks */,
+				4A0ED6E62FCC61660081EADA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4A0ED6EB2FCC61660081EADA /* TideInfoWidget */,
+			);
+			name = TideInfoWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = TideInfoWidgetExtension;
+			productReference = 4A0ED6E82FCC61660081EADA /* TideInfoWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +177,9 @@
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
 					4A0ED6B52FCC5F6C0081EADA = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					4A0ED6E72FCC61660081EADA = {
 						CreatedOnToolsVersion = 26.5;
 					};
 				};
@@ -100,12 +199,20 @@
 			projectRoot = "";
 			targets = (
 				4A0ED6B52FCC5F6C0081EADA /* TideWidget */,
+				4A0ED6E72FCC61660081EADA /* TideInfoWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4A0ED6B42FCC5F6C0081EADA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A0ED6E62FCC61660081EADA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +229,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4A0ED6E42FCC61660081EADA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A0ED6F82FCC61670081EADA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A0ED6E72FCC61660081EADA /* TideInfoWidgetExtension */;
+			targetProxy = 4A0ED6F72FCC61670081EADA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4A0ED6BF2FCC5F6D0081EADA /* Debug */ = {
@@ -306,6 +428,64 @@
 			};
 			name = Release;
 		};
+		4A0ED6FC2FCC61670081EADA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TideInfoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TideInfoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nooble.TideWidget.TideInfoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A0ED6FD2FCC61670081EADA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TideInfoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TideInfoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nooble.TideWidget.TideInfoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -323,6 +503,15 @@
 			buildConfigurations = (
 				4A0ED6C22FCC5F6D0081EADA /* Debug */,
 				4A0ED6C32FCC5F6D0081EADA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A0ED6FB2FCC61670081EADA /* Build configuration list for PBXNativeTarget "TideInfoWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A0ED6FC2FCC61670081EADA /* Debug */,
+				4A0ED6FD2FCC61670081EADA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
