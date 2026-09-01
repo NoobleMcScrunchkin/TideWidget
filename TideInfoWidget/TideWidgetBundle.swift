@@ -9,10 +9,10 @@ import WidgetKit
 import SwiftUI
 
 @main
-struct TideInfoWidgetBundle: WidgetBundle {
+struct TideWidgetBundle: WidgetBundle {
     var body: some Widget {
         TideInfoWidget()
-        TideInfoWidgetControl()
-        TideInfoWidgetLiveActivity()
+        CurrentTideWidget()
+        NextTideWidget()
     }
 }

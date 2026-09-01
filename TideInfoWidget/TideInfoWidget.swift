@@ -18,7 +18,7 @@ struct Provider: TimelineProvider {
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<TideDataEntry>) -> ()) {
         let currentDate = Date()
         
         Task {
@@ -86,7 +86,7 @@ struct TideInfoWidgetEntryView : View {
                     Text(entry.nextTideBoundary!.time.formatted(date: .omitted, time: .shortened))
                 }
             }
-        }
+        }.widgetURL(URL(string: "https://tides.digimap.gg/"))
     }
 }
 
@@ -106,14 +106,22 @@ struct TideInfoWidget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
-#Preview(as: .systemSmall) {
+#Preview(as: .accessoryRectangular) {
     TideInfoWidget()
 } timeline: {
-    TideDataEntry(date: .now, error: nil, currentHeight: 5, nextTideBoundary: TideBoundary(time: .now, height: 10, tideType: TideType.High))
+    TideDataEntry(date: .now, error: nil, currentHeight: 5, nextTideBoundary: TideBoundary(time: .now, height: 10, tideType: TideType.Low))
+    TideDataEntry(date: .now, error: nil, currentHeight: nil, nextTideBoundary: nil)
+    TideDataEntry(date: .now, error: "Failed to load", currentHeight: nil, nextTideBoundary: nil)
+}
+
+#Preview(as: .systemMedium) {
+    TideInfoWidget()
+} timeline: {
+    TideDataEntry(date: .now, error: nil, currentHeight: 5, nextTideBoundary: TideBoundary(time: .now, height: 10, tideType: TideType.Low))
     TideDataEntry(date: .now, error: nil, currentHeight: nil, nextTideBoundary: nil)
     TideDataEntry(date: .now, error: "Failed to load", currentHeight: nil, nextTideBoundary: nil)
 }
